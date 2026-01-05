@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | PEDDU ESTATES</title>
+    <link rel="stylesheet" href="/css/style.css?v=2">
+    <script src="/js/script.js?v=2"></script>
+</head>
+
+<body>
+
+    <%- include('../partials/navbar') %>
+
+        <header class="careers-hero">
+            <div class="careers-hero-content">
+                <span class="section-label">Join Our Team</span>
+                <h1 style="font-family: 'Times New Roman', serif; font-size: 3.5rem; margin-bottom: 20px;">
+                    Build the Future With Us.
+                </h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">
+                    We are always looking for visionaries, architects, and creators.
+                </p>
+            </div>
+        </header>
+
+
+        <section class="contact-section">
+            <div class="contact-container">
+
+                <div class="contact-wrapper">
+
+                    <div class="contact-info-side">
+                        <span class="section-label">Open Application</span>
+                        <h2>Make Your Mark</h2>
+                        <p>
+                            Ready to take the next step? Tell us who you are.
+                            We value portfolios and passion over standard cover letters.
+                        </p>
+
+                        <div class="contact-details">
+                            <div class="contact-card-item">
+                                <div class="icon-box">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.5">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <div class="text-content">
+                                    <span class="label">HR Department</span>
+                                    <p>saisamaninfra@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper">
+                        <form id="careersForm" class="modern-form">
+                            <h3>Submit Profile</h3>
+
+                            <div class="form-grid">
+                                <div class="input-group">
+                                    <input type="text" id="name" required placeholder=" ">
+                                    <label for="name">Full Name</label>
+                                    <span class="highlight-bar"></span>
+                                </div>
+                                <div class="input-group">
+                                    <input type="email" id="email" required placeholder=" ">
+                                    <label for="email">Email Address</label>
+                                    <span class="highlight-bar"></span>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <input type="text" id="role" required placeholder=" ">
+                                <label for="role">Role / Specialization</label>
+                                <span class="highlight-bar"></span>
+                            </div>
+
+                            <div class="input-group">
+                                <input type="url" id="link" placeholder=" ">
+                                <label for="link">LinkedIn / Portfolio URL</label>
+                                <span class="highlight-bar"></span>
+                            </div>
+
+                            <div class="input-group">
+                                <input type="url" id="resumeLink" placeholder=" ">
+                                <label for="resumeLink">Resume (Google Drive link)</label>
+                                <span class="highlight-bar"></span>
+                            </div>
+
+
+                            <button type="submit" class="btn-submit-luxury">
+                                <span>Submit Application</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
+                        </form>
+
+                        <div class="form-backdrop"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <%- include('../partials/footer') %>
+            <script src="/js/script.js"></script>
+</body>
+
+</html>

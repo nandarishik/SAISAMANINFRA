@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio | SAI SAMAN INFRA</title>
+    <link rel="stylesheet" href="/css/style.css?v=2">
+    <script src="/js/script.js?v=2"></script>
+</head>
+
+<body>
+
+    <%- include('../partials/navbar') %>
+
+        <div style="background-color: #fff;">
+            <%- include('../partials/projects-home') %>
+        </div>
+
+        <!-- COMPLETED PROJECTS SECTION -->
+        <section class="completed-section" id="completed">
+            <div class="project-container">
+                <div class="section-header">
+                    <span class="section-label">Our Legacy</span>
+                    <h2 class="section-title">Completed Works</h2>
+                    <p style="margin-top: 10px; margin-left: auto; margin-right: auto; color: #666; max-width: 600px;">
+                        A glimpse into the completed residential projects delivered
+                        by our founder across established communities.
+                    </p>
+                </div>
+
+                <div class="completed-grid">
+
+                    <!-- COMPLETED PROJECT 1 : SAI SAMAN PEARL -->
+                    <a href="/projects/sai-saman-pearl" class="completed-card">
+                        <div class="completed-thumb">
+                            <img src="/images/sai saman pearl.jpeg" alt="Sai Saman Pearl">
+                        </div>
+                        <div class="completed-info">
+                            <h3>Sai Saman Pearl</h3>
+                            <p>Residential Apartments • Completed</p>
+                        </div>
+                    </a>
+
+                    <!-- COMPLETED PROJECT 2 : FOUNDER HOME -->
+                    <a href="/projects/founder-home" class="completed-card">
+                        <div class="completed-thumb">
+                            <img src="/images/our home.jpeg" alt="Founder’s Personal Home">
+                        </div>
+                        <div class="completed-info">
+                            <h3>Founder’s Personal Home</h3>
+                            <p>Independent Residence • Completed</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <%- include('../partials/ribbon') %>
+            <%- include('../partials/footer') %>
+
+                <script src="/js/script.js"></script>
+</body>
+
+</html>

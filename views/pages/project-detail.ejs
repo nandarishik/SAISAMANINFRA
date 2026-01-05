@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= project.title %> | PEDDU ESTATES
+    </title>
+    <link rel="stylesheet" href="/css/style.css?v=2">
+    <script src="/js/script.js?v=2"></script>
+</head>
+
+<body>
+
+    <%- include('../partials/navbar') %>
+
+        <!-- HERO -->
+        <section class="detail-hero" style="--hero-img: url('<%= project.heroImage %>')">
+            <div class="detail-hero-inner"></div>
+        </section>
+
+        <div class="detail-info-bar">
+            <div class="detail-main">
+                <h1>
+                    <%= project.title %>
+                </h1>
+                <p style="color: #666;">
+                    <%= project.location %>
+                </p>
+            </div>
+            <div class="detail-meta">
+                <h4>Type</h4>
+                <p>
+                    <%= project.type %>
+                </p>
+            </div>
+            <div class="detail-meta">
+                <h4>Year</h4>
+                <p>
+                    <%= project.year %>
+                </p>
+            </div>
+        </div>
+
+        <article class="detail-content">
+            <div class="project-description">
+                <%- project.description %>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
+
+            <div class="project-specs-container"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+
+                <% if (project.specs && project.specs.length> 0) { %>
+                    <div class="spec-column">
+                        <h3 style="margin-bottom: 20px;">Configuration & Size</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <% project.specs.forEach(function(spec) { %>
+                                <li style="margin-bottom: 10px; display: flex; align-items: center;">
+                                    <span style="color: #000; margin-right: 10px;">•</span>
+                                    <%= spec %>
+                                </li>
+                                <% }); %>
+                        </ul>
+                    </div>
+                    <% } %>
+
+                        <% if (project.amenities && project.amenities.length> 0) { %>
+                            <div class="spec-column">
+                                <h3 style="margin-bottom: 20px;">Amenities</h3>
+                                <ul style="list-style: none; padding: 0;">
+                                    <% project.amenities.forEach(function(item) { %>
+                                        <li style="margin-bottom: 10px; display: flex; align-items: center;">
+                                            <span style="color: #000; margin-right: 10px;">•</span>
+                                            <%= item %>
+                                        </li>
+                                        <% }); %>
+                                </ul>
+                            </div>
+                            <% } %>
+
+                                <% if (project.perks && project.perks.length> 0) { %>
+                                    <div class="spec-column">
+                                        <h3 style="margin-bottom: 20px;">Locality Perks</h3>
+                                        <ul style="list-style: none; padding: 0;">
+                                            <% project.perks.forEach(function(perk) { %>
+                                                <li style="margin-bottom: 10px; display: flex; align-items: center;">
+                                                    <span style="color: #000; margin-right: 10px;">•</span>
+                                                    <%= perk %>
+                                                </li>
+                                                <% }); %>
+                                        </ul>
+                                    </div>
+                                    <% } %>
+            </div>
+
+            <% if (project.fullAddress) { %>
+                <div style="background: #f9f9f9; padding: 30px; margin-top: 40px; border-radius: 8px;">
+                    <h4 style="margin-bottom: 10px;">Location Address</h4>
+                    <p style="margin-bottom: 0;"><%- project.fullAddress %></p>
+                </div>
+                <% } %>
+
+                    <% if (project.mapLink) { %>
+                        <div class="project-map-link">
+                            <a href="<%= project.mapLink %>" target="_blank" rel="noopener">
+                                <span>View Location on Google Maps</span>
+                                <span class="arrow">↗</span>
+                            </a>
+                        </div>
+                        <% } %>
+        </article>
+
+        <section class="detail-gallery">
+            <% if (project.gallery && project.gallery.length> 0) { %>
+                <% project.gallery.forEach(function(img) { %>
+                    <div class="gallery-item">
+                        <img src="<%= img %>" alt="Project Image">
+                    </div>
+                    <% }); %>
+                        <% } %>
+        </section>
+
+        <div style="text-align: center; margin-bottom: 100px;">
+            <h3 style="font-weight: 300; margin-bottom: 30px;">Interested in this property?</h3>
+            <a href="/#contact" class="btn btn-primary"
+                style="background: #000; color: #fff; padding: 15px 30px; text-decoration: none; display: inline-block;">
+                Inquire Now
+            </a>
+        </div>
+
+        <!-- Image Lightbox -->
+        <div id="image-lightbox" style="display:none;">
+            <img id="lightbox-img" src="" alt="Expanded View">
+        </div>
+
+        <%- include('../partials/footer') %>
+            <script src="/js/script.js"></script>
+
+</body>
+
+</html>

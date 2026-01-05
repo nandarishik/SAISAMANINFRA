@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAI SAMAN INFRA | Homes Worth Living In</title>
+    <link rel="stylesheet" href="/css/style.css?v=2">
+    <script src="/js/script.js?v=2"></script>
+</head>
+
+<body>
+
+    <%- include('partials/navbar') %>
+
+        <header class="hero-section" style="--hero-bg: url('/images/hero.jpg')">
+            <div class="hero-bg-layer"></div>
+
+            <div class="hero-content">
+                <span class="hero-tagline">Est. 2010</span>
+                <h1 class="hero-title">Homes Worth Living In.</h1>
+                <p class="hero-subtitle">
+                    Homes that adapt to your lifestyle, not the other way around.
+                    Designed for comfort, built for long-term value.
+                </p>
+
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">Enquire Now</a>
+                    <a href="/projects" class="btn btn-outline">View Portfolio</a>
+                </div>
+
+                <!-- Contact Info -->
+                <p
+                    style="margin-top: 30px; font-size: 1.1rem; color: #fff; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+                    📞 +91 90004 46586 &nbsp; | &nbsp; 📧 saisamaninfra@gmail.com
+                </p>
+            </div>
+        </header>
+
+        <section class="projects-section">
+            <div class="project-container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-label">Ongoing</span>
+                    <h2 class="section-title">Signature Developments</h2>
+                </div>
+
+                <!-- PROJECT 1: DIAMOND -->
+                <div class="project-card animate-on-scroll delay-100">
+                    <div class="project-visual">
+                        <div style="background-image: url('/images/diamond-main.jpg');"></div>
+                        <a href="/projects/sai-saman-diamond" class="project-link-overlay"></a>
+                    </div>
+
+                    <div class="project-info">
+                        <span class="status-badge">Fast Selling</span>
+                        <h2>Sai Saman Diamond</h2>
+
+                        <div class="project-stats">
+                            <span class="stat-item">3BHK Apartments</span>
+                            <span class="stat-item" style="color: #ccc;">|</span>
+                            <span class="stat-item">Tarnaka</span>
+                        </div>
+
+                        <p class="project-desc">
+                            A thoughtfully crafted spacious 3BHK apartment, designed to
+                            flow naturally with the way residents live today.
+                        </p>
+                        <a href="/projects/sai-saman-diamond" class="link-arrow">
+                            View Details <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 2: CROWN -->
+                <div class="project-card reverse animate-on-scroll delay-200">
+                    <div class="project-visual">
+                        <div style="background-image: url('/images/crown-main.jpg');"></div>
+                        <a href="/projects/sai-saman-crown" class="project-link-overlay"></a>
+                    </div>
+
+                    <div class="project-info">
+                        <span class="status-badge">Ongoing Project</span>
+                        <h2>Sai Saman Crown</h2>
+
+                        <div class="project-stats">
+                            <span class="stat-item">Premium Residences</span>
+                            <span class="stat-item" style="color: #ccc;">|</span>
+                            <span class="stat-item">Tarnaka</span>
+                        </div>
+
+                        <p class="project-desc">
+                            Inspired by timeless elegance, offering privacy, space,
+                            and a refined sense of quiet royalty.
+                        </p>
+                        <a href="/projects/sai-saman-crown" class="link-arrow">
+                            View Details <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <%- include('partials/owner') %>
+            <%- include('partials/ribbon') %>
+                <%- include('partials/contact') %>
+                    <%- include('partials/footer') %>
+
+                        <script src="/js/script.js"></script>
+</body>
+
+</html>
