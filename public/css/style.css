@@ -2005,3 +2005,151 @@ img {
         font-size: 2.5rem;
     }
 }
+
+/* =========================================
+   20. RESPONSIVE OPTIMIZATION (MOBILE & TABLET)
+   ========================================= */
+
+@media (max-width: 992px) {
+    /* TABLET / SMALL DESKTOP ADJUSTMENTS */
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .owner-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .owner-image-wrapper {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .contact-info-side {
+        text-align: center;
+    }
+
+    .contact-info-side p {
+        margin: 0 auto 50px;
+    }
+
+    .contact-details {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    /* MOBILE LANDSCAPE / LARGE PHONES */
+
+    :root {
+        --nav-height: 80px;
+        --section-spacing: 60px;
+    }
+
+    .logo-img {
+        height: 60px;
+    }
+
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .nav-left,
+    .nav-right {
+        display: none;
+        /* Simplify nav for mobile - or implement hamburger if JS exists */
+        /* Temporary: Focus on logo */
+    }
+
+    .hero-section::before,
+    .hero-bg-layer {
+        background-position: center;
+        /* Ensure center focus */
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 40px;
+    }
+
+    .project-container {
+        padding: 0;
+    }
+
+    .project-visual {
+        height: 350px;
+    }
+
+    .project-info {
+        padding: 40px 20px;
+    }
+
+    .project-info h2 {
+        font-size: 2rem;
+    }
+
+    .founder-container {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .about-title,
+    .vision-container h2 {
+        font-size: 2.2rem;
+    }
+
+    .modern-form {
+        padding: 30px 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    /* SMALL MOBILE */
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .band-item {
+        margin: 0 30px;
+    }
+
+    .band-number {
+        font-size: 1.5rem;
+    }
+}
