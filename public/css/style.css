@@ -2155,6 +2155,16 @@ img {
     .hero-bg-layer {
         background-position: center;
         /* Ensure center focus */
+        filter: blur(5px) brightness(0.3);
+        /* Darker overlay for readability */
+    }
+
+    .hero-section {
+        min-height: 100vh;
+        /* Allow content to grow */
+        height: auto;
+        padding-top: var(--nav-height);
+        padding-bottom: 60px;
     }
 
     .hero-title {
@@ -2208,7 +2218,8 @@ img {
     }
 
     .modern-form {
-        padding: 30px 20px;
+        padding: 40px 20px;
+        /* More vertical breathing room */
     }
 
     .form-grid {
@@ -2220,7 +2231,8 @@ img {
     /* SMALL MOBILE */
 
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        /* Reduced from 2.2rem for better fit on small screens */
     }
 
     .band-item {
