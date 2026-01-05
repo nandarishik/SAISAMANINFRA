@@ -193,15 +193,21 @@ img {
    5. HERO SECTION (Updated for Dynamic Images)
    ========================================= */
 .hero-section {
-    position: relative;
-    height: 100vh;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     background-color: var(--color-black-deep);
     overflow: hidden;
+}
+
+/* Default Hamburger Hidden */
+.hamburger {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
 }
 
 /* The Ambient Blur Background */
@@ -2046,7 +2052,12 @@ img {
     }
 
     .contact-details {
-        align-items: center;
+        align-items: flex-start;
+        /* Left align on tablet/mobile */
+        width: 100%;
+        max-width: 400px;
+        /* Limit width */
+        margin: 0 auto;
     }
 }
 
@@ -2063,14 +2074,81 @@ img {
     }
 
     .navbar {
-        padding: 0 15px;
+        padding: 0 20px;
+        justify-content: space-between;
+        /* Ensure button stays on right */
     }
 
     .nav-left,
     .nav-right {
         display: none;
-        /* Simplify nav for mobile - or implement hamburger if JS exists */
-        /* Temporary: Focus on logo */
+    }
+
+    /* HAMBURGER BUTTON */
+    .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .hamburger .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: var(--color-black-deep);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* MOBILE MENU OVERLAY */
+    .mobile-menu {
+        position: fixed;
+        left: 0;
+        top: var(--nav-height);
+        /* Start below navbar */
+        width: 100%;
+        height: calc(100vh - var(--nav-height));
+        background-color: var(--color-white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 50px;
+        gap: 30px;
+        transform: translateX(100%);
+        /* Hidden by default */
+        transition: transform 0.4s var(--ease-premium);
+        z-index: 1000;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .mobile-menu.active {
+        transform: translateX(0);
+    }
+
+    .mobile-link {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--color-black-deep);
+        font-family: 'Times New Roman', serif;
+    }
+
+    .mobile-link:hover {
+        color: var(--color-gold);
     }
 
     .hero-section::before,
