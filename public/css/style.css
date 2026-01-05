@@ -2102,7 +2102,8 @@ img {
     .hamburger .bar {
         display: block;
         width: 25px;
-        height: 3px;
+        height: 2px;
+        /* Thinner bars */
         margin: 5px auto;
         transition: all 0.3s ease-in-out;
         background-color: var(--color-black-deep);
@@ -2253,10 +2254,54 @@ img {
     }
 
     .band-item {
-        margin: 0 30px;
+        margin: 0 15px;
+        /* Reduced from 30px */
     }
 
     .band-number {
+        font-size: 1.2rem;
+        /* Reduced from 1.5rem */
+    }
+
+    .band-label {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 350px) {
+    /* ULTRA SMALL MOBILE */
+
+    :root {
+        --section-spacing: 40px;
+    }
+
+    .navbar {
+        padding: 0 10px;
+    }
+
+    .logo-img {
+        height: 50px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        /* Further reduction */
+    }
+
+    .hero-btns {
+        padding: 0 10px;
+    }
+
+    .project-info h2 {
         font-size: 1.5rem;
+    }
+
+    .modern-form {
+        padding: 20px 10px;
+    }
+
+    .footer-content {
+        gap: 30px;
     }
 }
