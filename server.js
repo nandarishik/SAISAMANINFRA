@@ -52,8 +52,8 @@ const projectsData = {
         fullAddress: "Lane opposite Narayana Concept School,<br>Tarnaka, Hyderabad – 500017.",
         gallery: [
             "/images/diamond-exterior.png",
-            "/images/diamond-parking.png",
-            "/images/diamond-interior.png"
+            "/images/crown-parking.png",
+            "/images/crown-interior.png"
         ]
     },
 
@@ -88,8 +88,8 @@ const projectsData = {
         fullAddress: "Backside of Bank of Baroda,<br>Tarnaka, Hyderabad, Telangana.",
         gallery: [
             "/images/crown-2.jpg",
-            "/images/crown-parking.png",
-            "/images/crown-interior.png"
+            "/images/diamond-parking.png",
+            "/images/diamond-interior.png"
         ]
     },
 
