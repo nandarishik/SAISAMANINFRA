@@ -13,7 +13,13 @@
 
     <%- include('partials/navbar') %>
 
-        <header class="hero-section" style="--hero-bg: url('/images/hero.jpg')">
+        <header class="hero-section">
+            <div class="hero-video-container">
+                <video autoplay muted loop playsinline class="hero-video">
+                    <source src="/images/hero-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
             <div class="hero-bg-layer"></div>
 
             <div class="hero-content">
@@ -26,13 +32,14 @@
 
                 <div class="hero-btns">
                     <a href="#contact" class="btn btn-primary">Enquire Now</a>
-                    <a href="/projects" class="btn btn-outline">View Portfolio</a>
+                    <a href="/projects" class="btn btn-primary">View Projects</a>
                 </div>
 
                 <!-- Contact Info -->
+                <!-- Contact Info -->
                 <p
                     style="margin-top: 30px; font-size: 1.1rem; color: #fff; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
-                    📞 +91 90004 46586 &nbsp; | &nbsp; 📧 saisamaninfra@gmail.com
+                    +91 90004 46586 &nbsp; | &nbsp; saisamaninfra@gmail.com
                 </p>
             </div>
         </header>
@@ -74,7 +81,9 @@
                 <!-- PROJECT 2: CROWN -->
                 <div class="project-card reverse animate-on-scroll delay-200">
                     <div class="project-visual">
-                        <div style="background-image: url('/images/crown-main.jpg');"></div>
+                        <video autoplay muted loop playsinline class="project-video">
+                            <source src="/images/crown-video.mp4" type="video/mp4">
+                        </video>
                         <a href="/projects/sai-saman-crown" class="project-link-overlay"></a>
                     </div>
 

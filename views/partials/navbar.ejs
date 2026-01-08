@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar <%= (typeof isDetail !== 'undefined' && isDetail) ? 'curtain-hidden' : '' %>">
     <div class="nav-left">
         <a href="/" class="nav-link">Home</a>
         <a href="/about" class="nav-link">About Us</a>
@@ -31,5 +31,12 @@
         <a href="/projects" class="mobile-link">Projects</a>
         <a href="/careers" class="mobile-link">Careers</a>
         <a href="/#contact" class="mobile-link">Contact Us</a>
+    </div>
+    <!-- Curtain Toggle (Arrow) -->
+    <div class="curtain-toggle" id="curtainToggle">
+        <svg class="toggle-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
     </div>
 </nav>

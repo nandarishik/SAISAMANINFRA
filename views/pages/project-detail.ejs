@@ -16,8 +16,20 @@
     <%- include('../partials/navbar') %>
 
         <!-- HERO -->
-        <section class="detail-hero" style="--hero-img: url('<%= project.heroImage %>')">
-            <div class="detail-hero-inner"></div>
+        <!-- HERO -->
+        <section class="detail-hero"
+            style="<%= project.heroVideo ? '' : '--hero-img: url(' + project.heroImage + ');' %>">
+
+            <% if (project.heroVideo) { %>
+                <div class="hero-video-container">
+                    <video autoplay muted loop playsinline class="hero-video" style="filter: none;">
+                        <source src="<%= project.heroVideo %>" type="video/mp4">
+                    </video>
+                </div>
+                <% } else { %>
+                    <div class="detail-hero-inner"></div>
+                    <% } %>
+
         </section>
 
         <div class="detail-info-bar">

@@ -27,11 +27,12 @@ const projectsData = {
         year: "2025",
         location: "Tarnaka, Hyderabad",
         heroImage: "/images/diamond-main.jpg",
+        heroVideo: "/images/Diamond-video.mp4", // Added video support
         mapLink: "https://maps.app.goo.gl/YRp7Z3s9GXNR7rqf6",
         description: `
-            <p>After in-depth research into how people in Tarnaka live, grow, and use their homes, we studied existing residential layouts, evolving lifestyles, and the aspirations of families in the area.</p>
-            <p>Sai Saman Diamond is a thoughtfully crafted spacious 3BHK apartment, designed to flow naturally with the way residents live today.</p>
-            <p>Every layout balances openness, privacy, and functionality—creating a home that feels intuitive, comfortable, and enduring.</p>
+            <p>After in-depth research into how people in Tarnaka live, grow, and use their homes, we studied existing residential layouts, evolving lifestyles, and the aspirations of families in the area. We realized that true luxury lies in space, air, and connection.</p>
+            <p>Sai Saman Diamond is a thoughtfully crafted spacious 3BHK apartment, designed to flow naturally with the way residents live today. With expansive living areas and abundant natural light, it redefines apartment living.</p>
+            <p>Every layout balances openness, privacy, and functionality—creating a home that feels intuitive, comfortable, and enduring. It is more than just an address; it is a legacy for generations to come.</p>
         `,
         specs: [
             "Spacious 3BHK apartments",
@@ -62,11 +63,12 @@ const projectsData = {
         year: "2025",
         location: "Tarnaka, Hyderabad",
         heroImage: "/images/crown-main.jpg",
+        heroVideo: "/images/crown-video.mp4", // Added video support
         mapLink: "https://maps.app.goo.gl/6QVgyWxQSTVqrJr79",
         description: `
-            <p>Inspired by timeless elegance, Sai Saman Crown is designed to evoke a sense of quiet royalty—graceful, refined, and enduring.</p>
-            <p>The project offers privacy, space, and true ownership, where each residence feels personal and distinctly yours.</p>
-            <p>Every detail is crafted with care to deliver lasting value and pride of ownership.</p>
+            <p>Inspired by timeless elegance, Sai Saman Crown is designed to evoke a sense of quiet royalty—graceful, refined, and enduring. It stands as a testament to architectural excellence in the heart of the city.</p>
+            <p>The project offers privacy, space, and true ownership, where each residence feels personal and distinctly yours. Large balconies and premium finishes ensure a lifestyle of unmatched comfort.</p>
+            <p>Every detail is crafted with care to deliver lasting value and pride of ownership. From the grand entrance to the smallest corner, Sai Saman Crown is built for those who appreciate the finer things in life.</p>
         `,
         specs: [
             "Spacious premium residences",
@@ -100,7 +102,7 @@ const projectsData = {
         type: "Residential Apartments",
         year: "Completed",
         location: "KNR Hills Colony, Manikonda",
-        heroImage: "/images/sai saman pearl.jpeg",
+        heroImage: "/images/sai-saman-pearl.jpeg",
         mapLink: "https://maps.app.goo.gl/gaLpVobqRMAo5bZB6",
         description: `
             <p>Sai Saman Pearl is a completed residential apartment project located in KNR Hills Colony, Manikonda.</p>
@@ -112,27 +114,28 @@ const projectsData = {
         ],
         fullAddress: "KNR Hills Colony,<br>Manikonda, Hyderabad – 500089.",
         gallery: [
-            "/images/sai saman pearl.jpeg"
+            "/images/sai-saman-pearl.jpeg"
         ]
     },
 
     'founder-home': {
-        title: "Founder’s Personal Home",
-        type: "Independent Residence",
-        year: "Completed",
-        location: "KNR Hills Colony, Manikonda",
-        heroImage: "/images/our home.jpeg",
+        title: "Independent Houses",
+        type: "Custom Residential Projects",
+        year: "Ongoing & Completed",
+        location: "Various Locations",
+        heroImage: "/images/our-home.jpeg",
         description: `
-            <p>This is the founder’s own personal residence, built with the same principles of quality, planning, and long-term comfort applied across all projects.</p>
-            <p>Serving as a personal benchmark, the home reflects the builder’s commitment to living in the spaces he creates.</p>
+            <p>Our expertise extends beyond apartment complexes to bespoke independent residences. Each home is designed with the same principles of quality, planning, and long-term comfort that define our larger projects.</p>
+            <p>With over 300+ independent houses delivered in Mahabubnagar, we bring a wealth of experience in creating personal sanctuaries that reflect the unique needs and aspirations of each family.</p>
         `,
         specs: [
-            "Independent residential home",
-            "Personally occupied by the founder"
+            "Custom independent residences",
+            "Tailored architectural design",
+            "Quality construction standards"
         ],
         fullAddress: "KNR Hills Colony,<br>Manikonda, Hyderabad – 500089.",
         gallery: [
-            "/images/our home.jpeg"
+            "/images/our-home.jpeg"
         ]
     }
 };
@@ -150,7 +153,7 @@ app.get('/projects/:slug', (req, res) => {
     const project = projectsData[req.params.slug];
 
     if (project) {
-        res.render('pages/project-detail', { project });
+        res.render('pages/project-detail', { project, isDetail: true });
     } else {
         console.log(`❌ Invalid project slug: ${req.params.slug}`);
         res.redirect('/projects');

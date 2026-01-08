@@ -204,6 +204,23 @@ img {
     overflow: hidden;
 }
 
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* filter: brightness(0.6); REMOVED per user request */
+}
+
 /* Default Hamburger Hidden */
 .hamburger {
     display: none;
@@ -222,12 +239,14 @@ img {
     width: 100%;
     height: 100%;
     /* Default fallback, overridden by inline style */
-    background-image: var(--hero-bg, url('/images/hero.jpg'));
+    /* background-image: var(--hero-bg, url('/images/hero.jpg')); REMOVED FOR VIDEO */
     background-size: cover;
     background-position: center;
-    filter: blur(15px) brightness(0.4);
+    /* filter: blur(15px) brightness(0.4); REMOVED */
     transform: scale(1.1);
     z-index: 0;
+    display: none;
+    /* Hide ambient blur layer for video */
 }
 
 /* The Sharp Foreground Image (Optional, if you want the image distinct) */
@@ -237,12 +256,15 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: var(--hero-bg, url('/images/hero.jpg'));
+    background-color: transparent;
+    /* No image, just overlay */
     background-size: cover;
     background-position: center;
     z-index: 1;
-    /* Optional: Overlay to make text pop */
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+    /* Optional: Overlay to make text pop - Reduced significantly */
+    /* box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4); REMOVED heavy tint */
+    background: rgba(0, 0, 0, 0.1);
+    /* Very subtle overlay for text */
 }
 
 .hero-content {
@@ -275,6 +297,8 @@ img {
     font-weight: 700;
     margin-bottom: 20px;
     display: block;
+    /* ADDED: Text shadow for better visibility against video */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 1);
 }
 
 .hero-title {
@@ -289,10 +313,10 @@ img {
 
 .hero-subtitle {
     color: var(--color-white);
-    font-weight: 500;
-    /* reduced from 700 */
-    font-size: 1.5rem;
-    /* reduced from 1.6rem */
+    font-weight: 400;
+    /* reduced from 500 */
+    font-size: 1.3rem;
+    /* reduced from 1.5rem */
     line-height: 1.6;
     max-width: 600px;
     margin: 0 auto 40px;
@@ -498,19 +522,17 @@ img {
 
 /* Side Blur Effect Overlay */
 .project-visual::after {
-    content: '';
+    content: none;
+}
+
+.project-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
-    inset: 0;
-    z-index: 2;
-    pointer-events: none;
-
-    /* The blur effect */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-
-    /* The fade mask: Opaque at edges (showing blur), Transparent in center (showing original) */
-    -webkit-mask-image: linear-gradient(90deg, black 0%, transparent 20%, transparent 80%, black 100%);
-    mask-image: linear-gradient(90deg, black 0%, transparent 20%, transparent 80%, black 100%);
+    top: 0;
+    left: 0;
+    z-index: 0;
 }
 
 .project-visual::before {
@@ -535,11 +557,14 @@ img {
 }
 
 .project-desc {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    /* Slight increase */
     line-height: 1.6;
     color: var(--text-muted);
     margin-bottom: 30px;
-    max-width: 400px;
+    max-width: 450px;
+    font-family: 'Times New Roman', serif;
+    /* Matching headers */
 }
 
 .link-arrow {
@@ -2162,8 +2187,8 @@ img {
     .hero-bg-layer {
         background-position: center;
         /* Ensure center focus */
-        filter: blur(5px) brightness(0.3);
-        /* Darker overlay for readability */
+        filter: none;
+        /* User requested Clear Image */
     }
 
     .hero-section {
@@ -2202,9 +2227,13 @@ img {
     }
 
     .project-info h2 {
-        font-size: 1.8rem;
-        /* Reduced from 2.2rem/2rem */
+        font-size: 1.5rem;
+        /* Reduced to fit one line */
         line-height: 1.3;
+        white-space: nowrap;
+        /* User requested one line */
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .section-title {
@@ -2268,6 +2297,19 @@ img {
         letter-spacing: 1px;
     }
 
+    .ribbon-section {
+        padding: 20px 0;
+        /* Reduced from 35px for ALL mobile */
+    }
+
+    .contact-link,
+    .text-content p {
+        word-break: break-word;
+        /* Prevent email cutoff */
+        font-size: 1rem;
+        /* Slightly smaller for better fit */
+    }
+
     .contact-container {
         padding: 0 20px;
         /* Reduced from 40px */
@@ -2322,4 +2364,154 @@ img {
     .footer-content {
         gap: 30px;
     }
+}
+
+/* =========================================
+   21. PROJECT DETAIL HERO (ADDED FIX)
+   ========================================= */
+.detail-hero {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    background-image: var(--hero-img);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+}
+
+.detail-hero-inner {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ensure video container matches */
+.detail-hero .hero-video-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.detail-hero .hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================================
+   22. CURTAIN NAVBAR ANIMATIONS
+   ========================================= */
+
+/* Navbar hidden state */
+.navbar.curtain-hidden {
+    transform: translateY(-100%);
+    box-shadow: none;
+}
+
+/* Toggle Button Container */
+.curtain-toggle {
+    position: absolute;
+    bottom: -40px;
+    right: 40px;
+    /* Aligned with page padding */
+    left: auto;
+    /* Remove centering */
+    transform: none;
+    /* Remove centering transform */
+    width: 50px;
+    height: 40px;
+    background: var(--color-white);
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 999;
+}
+
+/* Visible state when navbar is hidden */
+.navbar.curtain-hidden .curtain-toggle {
+    opacity: 1;
+    pointer-events: auto;
+    bottom: -40px;
+    /* Ensure it stays put relative to hidden navbar? No, navbar moves up. */
+    /* 
+       Wait, if navbar moves translateY(-100%), the child moves with it.
+       If navbar height is 95px, -100% moves it up 95px.
+       The toggle is bottom: -40px. 
+       So toggle will be at top -40 relative to screen?
+       No, we need toggle to be visible AT TOP OF SCREEN when navbar is gone.
+       
+       Strategy: 
+       When navbar is hidden (translateY -100%), 
+       We want the toggle to hang down from the top edge of viewport.
+       
+       If navbar is at -95px, and toggle is at bottom -40px relative to navbar,
+       Toggle top is at -95px + 95px = 0.
+       So it should peek out perfectly.
+    */
+}
+
+.toggle-arrow {
+    color: var(--color-black-deep);
+    transition: transform 0.3s ease;
+}
+
+.curtain-toggle:hover .toggle-arrow {
+    color: var(--color-gold);
+    transform: translateY(2px);
+}
+
+
+/* =========================================
+   23. JUMPING ARROW & HIDDEN FIX
+   ========================================= */
+
+/* 
+   CRITICAL FIX: When navbar starts hidden, we MUST disable the default 
+   slide-down animation, otherwise it overrides the hidden transform.
+*/
+.navbar.curtain-hidden {
+    transform: translateY(-100%) !important;
+    animation: none !important;
+    box-shadow: none;
+}
+
+/* Bounce Animation for the Arrow */
+@keyframes arrowJump {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(6px);
+    }
+
+    60% {
+        transform: translateY(3px);
+    }
+}
+
+.navbar.curtain-hidden .toggle-arrow {
+    animation: arrowJump 2s infinite;
+    color: var(--color-gold);
+    /* Gold arrow when asking for attention */
 }

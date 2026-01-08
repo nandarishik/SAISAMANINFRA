@@ -185,3 +185,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// ===============================
+// CURTAIN NAVBAR LOGIC (DETAIL PAGES)
+// ===============================
+document.addEventListener('DOMContentLoaded', () => {
+    // Logic: If the navbar already has the class 'curtain-hidden' (from server), 
+    // we just need to handle the toggle.
+
+    // Or we can keep the detection backup
+    const navbar = document.querySelector('.navbar');
+    const toggleBtn = document.getElementById('curtainToggle');
+
+    if (navbar && toggleBtn) {
+        // Toggle Click Event
+        toggleBtn.addEventListener('click', () => {
+            navbar.classList.toggle('curtain-hidden');
+
+            // Optional: If opened, maybe remove the bounce animation?
+            // The bounce is on .navbar.curtain-hidden .toggle-arrow
+            // So removing .curtain-hidden stops the bounce automatically.
+        });
+    }
+});
