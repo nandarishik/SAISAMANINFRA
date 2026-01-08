@@ -89,7 +89,8 @@ const projectsData = {
         gallery: [
             "/images/crown-2.jpg",
             "/images/diamond-parking.png",
-            "/images/diamond-interior.png"
+            "/images/diamond-interior.png",
+            "/images/crown-3.jpg"
         ]
     },
 
@@ -121,8 +122,8 @@ const projectsData = {
     'founder-home': {
         title: "Independent Houses",
         type: "Custom Residential Projects",
-        year: "Ongoing & Completed",
-        location: "Various Locations",
+        year: "Completed",
+        location: "Various Locations in Mahabubnagar",
         heroImage: "/images/our-home.jpeg",
         description: `
             <p>Our expertise extends beyond apartment complexes to bespoke independent residences. Each home is designed with the same principles of quality, planning, and long-term comfort that define our larger projects.</p>
@@ -133,7 +134,7 @@ const projectsData = {
             "Tailored architectural design",
             "Quality construction standards"
         ],
-        fullAddress: "KNR Hills Colony,<br>Manikonda, Hyderabad – 500089.",
+        fullAddress: "Mahububnagar,<br>Telangana.",
         gallery: [
             "/images/our-home.jpeg"
         ]
